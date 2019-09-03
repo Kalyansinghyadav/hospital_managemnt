@@ -8,7 +8,7 @@ class DoctorController < ApplicationController
 	def index
 		@doctors = Doctor.all
 	end
-	
+
 	def create
 		doctor = Doctor.new
 		doctor.name = params[:doctor][:name]
@@ -16,6 +16,7 @@ class DoctorController < ApplicationController
 		doctor.address = params[:doctor][:address]
 		doctor.salary = params[:doctor][:salary]
 		doctor.save
+		redirect_to "/doctor"
 	end
 
 end
