@@ -1,0 +1,27 @@
+
+<table width="50%" cellpadding="3" cellspacing="3" border="3" bordercolor="black">
+	<caption><b>Doctor Details<br></caption>
+   <tr>
+   	  <th>ID</th>
+   	  <th>Name</th>
+   	  <th>Contact</th>
+      <th>DoctorDetail</th>
+
+   	</tr>
+  <% @doctors.each do |doctor| %>
+  	<tr>
+      <td><%= doctor.id %></td>
+       <td><%= doctor.name %></td>
+        <td><%= doctor.contact_no %></td>
+         <td>
+            <%= link_to "show","/doctor/#{doctor.id}" %>
+            <%= link_to "Edit","/doctor/edit/#{doctor.id}" %>
+            <%= link_to "Edit","/doctor/destroy/#{doctor.id}" %>
+          </td>
+    </tr>
+  <% end %>
+
+</table>
+<br>
+<br>
+<%= link_to "Create New Doctor","/doctor/new" %>
