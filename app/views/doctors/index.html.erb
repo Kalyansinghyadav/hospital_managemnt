@@ -5,6 +5,7 @@
    	  <th>ID</th>
    	  <th>Name</th>
    	  <th>Contact</th>
+      <th>Salary</th>
       <th>DoctorDetail</th>
 
    	</tr>
@@ -13,10 +14,11 @@
       <td><%= doctor.id %></td>
        <td><%= doctor.name %></td>
         <td><%= doctor.contact_no %></td>
+        <td><%= doctor.salary %></td>
          <td>
-            <%= link_to "show","/doctor/#{doctor.id}" %>
-            <%= link_to "Edit","/doctor/edit/#{doctor.id}" %>
-            <%= link_to "Edit","/doctor/destroy/#{doctor.id}" %>
+            <%= link_to "show","/doctors/#{doctor.id}" %>
+            <%= link_to "Edit","/doctors/edit/#{doctor.id}" %>
+            <%= link_to "Delete","/doctors/destroy/#{doctor.id}" %>
           </td>
     </tr>
   <% end %>
