@@ -14,6 +14,7 @@
          <td>
             <%= link_to "Edit","/roles/edit/#{role.id}" %>
             <%= link_to "Delete","/roles/destroy/#{role.id}" %>
+            <%= link_to "Show All Doctors",doctors_path(id: role.id) %>
           </td>
     </tr>
   <% end %>

@@ -5,7 +5,11 @@ class DoctorsController < ApplicationController
 	end
 
 	def index
-		@doctors = Doctor.all
+	  if params[:id]
+		  @doctors = Doctor.joins(:role).where(role_id: params[:id])
+	   else
+          @doctors = Doctor.all
+       end
 	end
 
 	def show
