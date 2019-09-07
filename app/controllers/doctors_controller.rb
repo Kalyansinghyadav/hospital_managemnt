@@ -6,7 +6,8 @@ class DoctorsController < ApplicationController
 
 	def index
 	  if params[:id]
-		  @doctors = Doctor.joins(:role).where(role_id: params[:id])
+		  role = Role.find_by(id: params[:id])
+		  @doctors = role.doctors
 	   else
           @doctors = Doctor.all
        end
