@@ -1,5 +1,5 @@
 <br>
-<%= form_for @appointment do |a| %>
-Date_of_appointment: <%= a.text_field :Date_of_appointment,data: { provide: 'datepicker' %><br />
-<%= r.submit %>
+<%= form_for @role do |role| %><br />
+Role_name <%= role.text_field :role_name %><br><br>
+<%= role.submit %>
 <%end%>
