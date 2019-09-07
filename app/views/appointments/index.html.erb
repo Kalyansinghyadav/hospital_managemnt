@@ -6,16 +6,17 @@
    	  <th>Date</th>
       <th>Appointment Detail</th>
    	  
-    	</tr>
+    </tr>
   <% @appointments.each do |appointment| %>
   	<tr>
       <td><%= appointment.id %></td>
        <td><%= appointment.date_of_appointment %></td>
-         <td>
-            <%= link_to "Edit","/appointments/edit/#{appointment.id}" %>
-            <%= link_to "Delete","/appointments/destroy/#{appointment.id}" %>
-            <%= link_to "Show","/appointments/#{appointment.id}" %>
-          </td>
+       <td><%= appointment.doctor.name %></td>
+       <td><%= appointment.patient.name %></td>
+       <td>
+          <%= link_to "Edit","/appointments/edit/#{appointment.id}" %>
+          <%= link_to "Delete","/appointments/destroy/#{appointment.id}" %>
+       </td>
     </tr>
   <% end %>
 
