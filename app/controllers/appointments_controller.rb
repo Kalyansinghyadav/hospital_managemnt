@@ -17,4 +17,15 @@ class AppointmentsController < ApplicationController
 		redirect_to "/appointments"
 	end
 
+	def edit
+		@appointment = Appointment.find(params[:id])
+	end
+
+	def destroy
+		@appointment = Appointment.find(params[:id])
+		if @appointment.destroy
+			redirect_to "/appointments"
+		end
+	end
+
 end
