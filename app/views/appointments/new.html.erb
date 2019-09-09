@@ -1,7 +1,7 @@
 
-  <%= form_for @appointment do |a|%>
- <%= a.collection_select(:doctor_id, Doctor.all, :id, :name,prompt: "Please select doctor") %><br><br>
+  <%= form_for @appointment do |appointment|%>
+ <%= appointment.collection_select(:doctor_id, Doctor.all, :id, :name,prompt: "Please select doctor") %><br><br>
 
- <%= a.collection_select(:patient_id, Patient.all, :id, :name,prompt: "Please select patient") %><br><br>
-   <%= a.submit %>
- <%end%>
+ <%= appointment.collection_select(:patient_id, Patient.all, :id, :name,prompt: "Please select patient") %><br><br>
+   <%= appointment.submit %>
+   <%end%>
