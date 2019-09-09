@@ -3,7 +3,5 @@
  <%= a.collection_select(:doctor_id, Doctor.all, :id, :name,prompt: "Please select doctor") %><br><br>
 
  <%= a.collection_select(:patient_id, Patient.all, :id, :name,prompt: "Please select patient") %><br><br>
- <%= a.label :date_of_appointment%>
- <%= a.datetime_field('appointment','date_of_appointment', min: Date.today)%>
- <%= a.submit %>
+   <%= a.submit %>
  <%end%>

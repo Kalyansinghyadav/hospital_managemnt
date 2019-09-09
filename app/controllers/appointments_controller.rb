@@ -27,5 +27,12 @@ class AppointmentsController < ApplicationController
 			redirect_to "/appointments"
 		end
 	end
+	def update
+		@appointment = Appointment.find(params[:id])
+		if @appointment.update(doctor_id: params[:appointment][:doctor_id],
+		 patient_id: params[:appointment][:patient_id])	
+		 redirect_to "/appointments"
+		end		
+	end
 
 end

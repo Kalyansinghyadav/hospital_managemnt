@@ -3,20 +3,20 @@
 	<caption><b>Appointment<br></caption>
    <tr>
    	  <th>ID</th>
-   	  <th>Date</th>
-      <th>Appointment Detail</th>
+      <th>DoctorName</th>
+      <th>PatientName</th>
+   	  <th>Appointment Detail</th>
    	  
     </tr>
   <% @appointments.each do |appointment| %>
   	<tr>
       <td><%= appointment.id %></td>
-       <td><%= appointment.date_of_appointment %></td>
-       <td><%= appointment.doctor.name %></td>
-       <td><%= appointment.patient.name %></td>
-       <td>
+      <td><%= appointment.doctor.name %></td>
+      <td><%= appointment.patient.name %></td>
+      <td>
           <%= link_to "Edit","/appointments/edit/#{appointment.id}" %>
           <%= link_to "Delete","/appointments/destroy/#{appointment.id}" %>
-       </td>
+      </td>
     </tr>
   <% end %>
 

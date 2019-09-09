@@ -28,6 +28,10 @@ Rails.application.routes.draw do
 
     get "/appointments/new" => "appointments#new"
     get "/appointments" => "appointments#index"
-     get "/appointments" => "appointments#create"
+    post "/appointments" => "appointments#create"
+    get "/appointments/edit/:id" => "appointments#edit"
+    get   "/appointments/destroy/:id" => "appointments#destroy"
+
+
 
  end
