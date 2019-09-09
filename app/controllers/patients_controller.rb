@@ -5,7 +5,12 @@ class PatientsController < ApplicationController
 	end
 
 	def index
-		@patients = Patient.all
+		if params[:id]
+		   doctor = Doctor.find(params[:id]) 
+		   @patients = doctor.patients
+		else
+		   @patients = Patient.all
+		end
 	end
 
 	def show
