@@ -22,6 +22,7 @@
             <%= link_to "show","/doctors/#{doctor.id}" %>
             <%= link_to "Edit","/doctors/edit/#{doctor.id}" %>
             <%= link_to "Delete","/doctors/destroy/#{doctor.id}" %>
+            <%= link_to "all patients",patients_path(id: doctor.id)%>
           </td>
     </tr>
   <% end %>
