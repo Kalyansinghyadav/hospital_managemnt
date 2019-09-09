@@ -5,10 +5,13 @@ class DoctorsController < ApplicationController
 	end
 
 	def index
-	  if params[:id]
-		  role = Role.find_by(id: params[:id])
-		  @doctors = role.doctors
-	   else
+	  #if params[:id]
+		#  role = Role.find_by(id: params[:id])
+		 # @doctors = role.doctors
+		if params[:id]
+	      patient = Patient.find(params[:id])
+	      @doctors = patient.doctors 
+	    else  	   
           @doctors = Doctor.all
        end
 	end
