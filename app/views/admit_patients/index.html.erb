@@ -1,0 +1,30 @@
+<table width="50%" cellpadding="3" cellspacing="3" border="3" bordercolor="black">
+	<caption><b>All Admit Patients<br></caption>
+   <tr>
+   	  <th>ID</th>
+   	  <th>Name</th>
+      <th>Age</th>
+      <th>Address</th>
+      <th>Contact</th>
+      <th>Patient Detail</th>
+   	  
+    	</tr>
+  <% @admit_patients.each do |patient| %>
+  	<tr>
+      <td><%= patient.id %></td>
+       <td><%= patient.name %></td>
+       <td><%= patient.age %></td>
+       <td><%= patient.address %></td>
+       <td><%= patient.contact_no %></td>
+         <td>
+            <%= link_to "Edit","/admit_patients/edit/#{patient.id}" %>
+            <%= link_to "Delete","/admit_patients/#{patient.id}", method: "delete" %>
+            <%= link_to "Show", "/admit_patients/#{patient.id}"%>
+          </td>
+    </tr>
+  <% end %>
+
+</table>
+<br>
+<br>
+<%= link_to "Admit New Patient","/admit_patients/new" %>
