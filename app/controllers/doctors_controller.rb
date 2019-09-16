@@ -5,15 +5,15 @@ class DoctorsController < ApplicationController
 	end
 
 	def index
-	  #if params[:id]
-		#  role = Role.find_by(id: params[:id])
-		 # @doctors = role.doctors
-		if params[:id]
-	      patient = Patient.find(params[:id])
-	      @doctors = patient.doctors 
-	    else  	   
+	  if params[:id]
+		  department = Department.find_by(id: params[:id])
+		 @doctors = department.doctors
+		#if params[:id]
+	     # patient = Patient.find(params[:id])
+	      #@doctors = patient.doctors 
+	  else  	   
           @doctors = Doctor.all
-       end
+      end
 	end
 
 	def show
@@ -30,7 +30,7 @@ class DoctorsController < ApplicationController
 		doctor.contact_no = params[:doctor][:contact_no]
 		doctor.address = params[:doctor][:address]
 		doctor.salary = params[:doctor][:salary]
-		doctor.role_id = params[:doctor][:role_id]
+		doctor.department_id = params[:doctor][:department_id]
 		doctor.save
 		redirect_to "/doctors"
 	end

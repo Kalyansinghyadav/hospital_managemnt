@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
    
-     resources :roles
+     resources :departments
      resources :doctors
      resources :patients
      resources :appointments
@@ -9,15 +9,16 @@ Rails.application.routes.draw do
     get "/doctors" => "doctors#index" 
     post "/doctors" => "doctors#create"
     get "/doctors/edit/:id" => "doctors#edit"
+    patch "/doctors/:id" => "doctors#update"
     get "/doctors/destroy/:id" => "doctors#destroy"
     get "/doctors/new" => "doctors#new"
     get "/doctors/:id" => "doctors#show"
     
-    get "/roles" => "roles#index"
-    post "/roles" => "roles#create"
-    get "/roles/new" => "roles#new"
-    get "/roles/edit/:id" => "roles#edit"
-    get "/roles/destroy/:id" => "roles#destroy"
+    get "/departments" => "departments#index"
+    post "/departments" => "departments#create"
+    get "/departments/new" => "departments#new"
+    get "/departments/edit/:id" => "departments#edit"
+    get "/departments/destroy/:id" => "departments#destroy"
 
     get "/patients" => "patients#index"
     get "/patients/new" => "patients#new"
@@ -32,6 +33,16 @@ Rails.application.routes.draw do
     get "/appointments/edit/:id" => "appointments#edit"
     get   "/appointments/destroy/:id" => "appointments#destroy"
 
+    get '/login' => 'login#index'
+    post '/login' => 'login#login'
 
+    get '/signup' => 'signup#index'
+    post '/signup' => 'signup#create'
+
+
+     get 'users/login'
+     get 'users/signup'
+     get 'users/index'
+     post 'users/create'
 
  end

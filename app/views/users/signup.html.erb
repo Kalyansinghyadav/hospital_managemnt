@@ -1,0 +1,7 @@
+<%= form_tag( "/users/create", method: "post") do %>
+UserName: <%= text_field_tag(:username) %>
+Password: <%= text_field_tag(:password) %>
+<%= submit_tag("signup") %>
+<%end%>
+<%= link_to "Have account login ","/user/login"%>
+

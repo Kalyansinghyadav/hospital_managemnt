@@ -1,0 +1,6 @@
+Add new Department 
+<br><br/>
+<%= form_for @department do |department| %>
+DepartmentName: <%= department.text_field :name %><br>
+<br><%= department.submit%>
+<% end %>

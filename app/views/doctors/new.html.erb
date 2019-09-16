@@ -5,6 +5,6 @@ Name: <%= f.text_field :name %><br>
 <br>Contact: <%= f.text_field :contact_no %><br>
 <br>Address: <%= f.text_field :address %><br>
 <br>Salary: <%= f.text_field :salary %><br><br>
-<%= f.collection_select(:role_id, Role.all, :id, :role_name, prompt: true) %><br>
+<%= f.collection_select(:department_id, Department.all, :id, :name, prompt: true) %><br>
 <br><%= f.submit%>
 <% end %>
