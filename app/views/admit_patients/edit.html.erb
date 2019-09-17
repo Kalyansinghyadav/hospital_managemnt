@@ -1,0 +1,11 @@
+<br><br/>
+<%= form_for @admit_patient do |admit_patient| %>
+Name: <%= admit_patient.text_field :name %><br><br>
+Age: <%= admit_patient.text_field :age %><br><br>
+Address: <%= admit_patient.text_field :address %><br><br>
+Contact: <%= admit_patient.text_field :contact_no %><br><br>
+<%= admit_patient.collection_select(:room_id, Room.all, :id, :room_name,prompt: "Please select room")%><br><br>
+BedNo: <%= admit_patient.text_field :bed_no %><br><br>
+Disease: <%= admit_patient.text_field :disease %><br><br>
+<br><%= admit_patient.submit%>
+<% end %>
