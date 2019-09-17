@@ -17,7 +17,7 @@
        <td><%= patient.address %></td>
        <td><%= patient.contact_no %></td>
          <td>
-            <%= link_to "Edit","/admit_patients/edit/#{patient.id}" %>
+            <%= link_to "Edit","/admit_patients/#{patient.id}/edit", method: "patch" %>
             <%= link_to "Delete","/admit_patients/#{patient.id}", method: "delete" %>
             <%= link_to "Show", "/admit_patients/#{patient.id}"%>
           </td>

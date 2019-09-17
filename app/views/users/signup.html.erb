@@ -1,7 +1,10 @@
-<%= form_tag( "/users/create", method: "post") do %>
-UserName: <%= text_field_tag(:username) %>
-Password: <%= text_field_tag(:password) %>
-<%= submit_tag("signup") %>
+Please Signup
+<br>
+<%= form_for @user do |user| %>
+UserName: <%= user.text_field :User_name %><br>
+Email: <%= user.text_field :email %><br>
+Password: <%= user.text_field :password %><br>
+Confirm_password: <%= user.text_field :confirm_password %><br>
+<%= user.radio_button("user", "gender", "male") %>
+<%= user.radio_button("user", "gender", "female") %>
 <%end%>
-<%= link_to "Have account login ","/user/login"%>
-

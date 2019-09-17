@@ -12,7 +12,7 @@ class DoctorsController < ApplicationController
 	     # patient = Patient.find(params[:id])
 	      #@doctors = patient.doctors 
 	  else  	   
-          @doctors = Doctor.all
+          @doctors = Doctor.all.where("status=true")
       end
 	end
 
@@ -48,6 +48,12 @@ class DoctorsController < ApplicationController
 		@doctor = Doctor.find(params[:id])
 		@doctor.destroy
 		redirect_to "/doctors"
+	end
+	def disable
+		doctor = Doctor.find_by(id:params[:id])
+		if doctor.update(status:false)
+			redirect_to "/doctors"
+	    end
 	end
 
 end

@@ -12,7 +12,7 @@ class AppointmentsController < ApplicationController
 		appointment = Appointment.new
 		appointment.doctor_id = params[:appointment][:doctor_id]
 		appointment.patient_id = params[:appointment][:patient_id]
-		appointment.date_of_appointment = params[:appointment][:date_of_appointment]
+		appointment.time = params[:appointment][:time]
 		appointment.save
 		redirect_to "/appointments"
 	end
@@ -28,8 +28,8 @@ class AppointmentsController < ApplicationController
 		end
 	end
 	def update
-		@appointment = Appointment.find(params[:id])
-		if @appointment.update(doctor_id: params[:appointment][:doctor_id],
+		appointment = Appointment.find(params[:id])
+		if appointment.update(doctor_id: params[:appointment][:doctor_id],
 		 patient_id: params[:appointment][:patient_id])	
 		 redirect_to "/appointments"
 		end		

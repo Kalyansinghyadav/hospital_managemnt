@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
    
-     resources :departments
+     resources :departments, :admit_patients
      resources :doctors
      resources :patients
      resources :appointments
+
    
-    root to: "home#index"
+    root to: "users#index"
     get "/doctors" => "doctors#index" 
     post "/doctors" => "doctors#create"
     get "/doctors/edit/:id" => "doctors#edit"
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
     get "/doctors/destroy/:id" => "doctors#destroy"
     get "/doctors/new" => "doctors#new"
     get "/doctors/:id" => "doctors#show"
+    patch "/doctors/disable/:id" => "doctors#disable"
     
     get "/departments" => "departments#index"
     post "/departments" => "departments#create"
@@ -35,14 +37,9 @@ Rails.application.routes.draw do
 
     get '/login' => 'login#index'
     post '/login' => 'login#login'
-
     get '/signup' => 'signup#index'
     post '/signup' => 'signup#create'
 
-
-     get 'users/login'
-     get 'users/signup'
-     get 'users/index'
-     post 'users/create'
+    patch "/admit_patients/:id/edit" => "admit_patients#edit"
 
  end

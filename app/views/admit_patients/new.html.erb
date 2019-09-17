@@ -5,7 +5,8 @@ Name: <%= patient.text_field :name %><br><br>
 Age: <%= patient.text_field :age %><br><br>
 Address: <%= patient.text_field :address %><br><br>
 Contact: <%= patient.text_field :contact_no %><br><br>
-<%= patient.collection_select(:room_id, Room.all, :id, :room_name,prompts:true)%><br><br>
+<%= patient.collection_select(:room_id, Room.all, :id, :room_name,prompt: "Please select room")%><br><br>
 BedNo: <%= patient.text_field :bed_no %><br><br>
+Disease: <%= patient.text_field :disease %><br><br>
 <br><%= patient.submit%>
 <% end %>
