@@ -3,10 +3,10 @@ Rails.application.routes.draw do
      resources :departments, :admit_patients
      resources :doctors
      resources :patients
-     resources :appointments
+     resources :appointments, :users, :session
 
    
-    root to: "users#index"
+    root to: "users#new"
     get "/doctors" => "doctors#index" 
     post "/doctors" => "doctors#create"
     get "/doctors/edit/:id" => "doctors#edit"
@@ -41,5 +41,12 @@ Rails.application.routes.draw do
     post '/signup' => 'signup#create'
 
     patch "/admit_patients/:id/edit" => "admit_patients#edit"
+
+    get "/users/new" => "users#new"
+    post "/users" => "users#create"
+    
+    post "/users/login" => "users#login"
+    get "/session/new" => "session#new"
+    post "/session" => "session#create"
 
  end

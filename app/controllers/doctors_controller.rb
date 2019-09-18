@@ -1,5 +1,14 @@
 class DoctorsController < ApplicationController
+ before_action :authenticate
 
+  def authenticate
+    if session[:id] ==nil
+     redirect_to "/users/new"
+    else
+      return true
+    end
+    
+  end
 	def new
 		@doctor = Doctor.new
 	end

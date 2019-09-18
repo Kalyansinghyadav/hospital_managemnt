@@ -1,0 +1,14 @@
+Please Signup
+<br><br>
+<%= form_for @user do |user| %>
+UserName: <%= user.text_field :username %><br>
+Email: <%= user.text_field :email %><br>
+DOB: <%= user.text_field :dob%><br>
+Password: <%= user.password_field :password %><br>
+Confirm_password: <%= user.password_field :confirm_password %><br><br>
+Gender: <%= user.radio_button :gender,"male" %>male
+        <%= user.radio_button :gender,"female" %>female
+        <br><%= user.submit "Signin"%>
+<%end%>
+<%= link_to "Login","/session/new"%>
+
